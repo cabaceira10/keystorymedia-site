@@ -1,0 +1,6 @@
+name = "keystory"
+pages_build_output_dir = "./public"
+compatibility_date = "2026-11-01"
+
+[vars]
+ALERTAS_URL = "https://alertas-sites.alertas-sites.workers.dev"
