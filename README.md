@@ -14,7 +14,10 @@ Site da Keystory Media (https://keystorymedia.com), alojado no Cloudflare Pages.
 npx wrangler pages dev public
 ```
 
-## Publicar
+## GitHub Pages
+Cada push para `main` publica a pasta `public/` em https://cabaceira10.github.io/keystorymedia-site/ (workflow em `.github/workflows/pages.yml`). O `/api/track` não funciona aqui, porque o GitHub Pages não corre funções.
+
+## Publicar no domínio (Cloudflare)
 Só quem tem acesso à conta Cloudflare:
 
 ```
