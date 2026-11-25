@@ -35,8 +35,8 @@ function Filme({ titulo, src, poster }: { titulo: string; src: string; poster: s
         <video ref={v} src={A(src)} poster={A(poster)} preload="none" playsInline controls={anda} aria-label={titulo} className="h-full w-full object-cover" />
         {!anda && (
           <button type="button" onClick={toca} aria-label={`Ver o vídeo: ${titulo}`} className="group absolute inset-0 grid place-items-center bg-night/25">
-            <span className="grid h-16 w-16 place-items-center rounded-full bg-marfim text-ink shadow-[0_0_0_8px_rgba(244,239,232,.2),0_18px_40px_-8px_rgba(0,0,0,.8)] transition duration-300 group-hover:scale-110">
-              <Play className="ml-1 h-7 w-7" />
+            <span className="grid h-16 w-16 place-items-center rounded-full bg-marfim sm:h-24 sm:w-24 text-ink shadow-[0_0_0_8px_rgba(244,239,232,.2),0_18px_40px_-8px_rgba(0,0,0,.8)] transition duration-300 group-hover:scale-110">
+              <Play className="ml-1 h-7 w-7 sm:h-10 sm:w-10" />
             </span>
           </button>
         )}
@@ -92,11 +92,11 @@ export default function Portefolio() {
   const [aberta, setAberta] = useState<number | null>(null);
   const c = FOTOS[casa];
   return (
-    <section id="portefolio" aria-labelledby="t-portefolio" className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
+    <section id="portefolio" aria-labelledby="t-portefolio" className="relative mx-auto max-w-[1500px] px-5 py-20 sm:px-8 sm:py-24">
       <TituloBloco id="t-portefolio" titulo={["Não acredites em nós.", "Vê o trabalho."]} />
 
       <Surge>
-        <h3 className="mt-12 text-xl font-extrabold uppercase tracking-[-0.01em] text-white sm:text-2xl">Fotografia</h3>
+        <h3 className="mt-12 text-2xl font-extrabold uppercase tracking-[-0.01em] text-white sm:text-4xl">Fotografia</h3>
         <p className="mt-2 max-w-2xl text-pretty text-[15px] leading-relaxed text-mute">Interiores e exteriores, editados para os portais. Toca numa fotografia para a ver em grande.</p>
       </Surge>
       <div role="tablist" aria-label="Imóveis fotografados" className="mt-5 flex flex-wrap gap-2">
@@ -115,17 +115,17 @@ export default function Portefolio() {
       </div>
       <div className="-mx-5 mt-5 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-3 sm:-mx-8 sm:px-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {Array.from({ length: c.n }, (_, i) => (
-          <button key={`${c.dir}-${i}`} type="button" onClick={() => setAberta(i)} aria-label={`${c.titulo}, abrir a fotografia ${i + 1}`} className="group relative h-52 w-[78vw] max-w-[380px] flex-none snap-start overflow-hidden rounded-2xl bg-deep ring-1 ring-white/10 sm:h-64">
-            <img src={foto(c.dir, i, true)} alt="" loading="lazy" decoding="async" draggable={false} className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]" />
+          <button key={`${c.dir}-${i}`} type="button" onClick={() => setAberta(i)} aria-label={`${c.titulo}, abrir a fotografia ${i + 1}`} className="group relative aspect-[3/2] w-[86vw] max-w-[760px] flex-none snap-start overflow-hidden rounded-2xl bg-deep ring-1 ring-white/10">
+            <img src={foto(c.dir, i)} alt="" loading="lazy" decoding="async" draggable={false} className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]" />
           </button>
         ))}
       </div>
 
       <Surge>
-        <h3 className="mt-16 text-xl font-extrabold uppercase tracking-[-0.01em] text-white sm:text-2xl">Renders com IA</h3>
+        <h3 className="mt-20 text-2xl font-extrabold uppercase tracking-[-0.01em] text-white sm:text-4xl">Renders com IA</h3>
         <p className="mt-2 max-w-2xl text-pretty text-[15px] leading-relaxed text-mute">Filmamos o terreno ou a obra e usamos IA para revelar o projeto acabado. O comprador vê a casa antes de haver casa.</p>
       </Surge>
-      <div className="mt-5 grid gap-5 lg:grid-cols-2">
+      <div className="mt-6 grid gap-6 xl:grid-cols-2">
         {RENDERS.map((r) => (
           <Filme key={r.src} {...r} />
         ))}

@@ -199,16 +199,16 @@ html.abre [data-logo-topo] { opacity: 0; }
 @keyframes porta-d { to { transform: rotateY(-104deg); } }
 @keyframes sombra { to { opacity: .85; } }
 .ab-logo { --m: clamp(70px, 22vw, 136px); position: absolute; left: 50%; top: 46%; translate: -50% -50%; transform-origin: 0 0; }
-.ab-clique { display: flex; align-items: center; gap: calc(var(--m) * .4); color: var(--color-areia); animation: clique .34s cubic-bezier(.3, 0, .2, 1) .86s; }
+.ab-clique { display: flex; align-items: center; gap: calc(var(--m) * .4); color: var(--color-areia); animation: clique .28s cubic-bezier(.3, 0, .2, 1) .5s; }
 @keyframes clique { 40% { scale: 1.035; } }
 .ab-ky { height: var(--m); width: auto; flex: none; overflow: visible; }
-.ab-nome { height: calc(var(--m) * .5); width: auto; flex: none; clip-path: inset(-20% 100% -20% 0); translate: -6% 0; animation: escreve .55s cubic-bezier(.65, 0, .35, 1) .74s forwards; }
+.ab-nome { height: calc(var(--m) * .5); width: auto; flex: none; clip-path: inset(-20% 100% -20% 0); translate: -6% 0; animation: escreve .4s cubic-bezier(.65, 0, .35, 1) .36s forwards; }
 @keyframes escreve { to { clip-path: inset(-20% 0 -20% 0); translate: 0 0; } }
-.ab-letras { transform-box: fill-box; clip-path: inset(100% 0 0 0); translate: 0 14%; animation: enche .62s cubic-bezier(.2, .7, .1, 1) .08s forwards; }
+.ab-letras { transform-box: fill-box; clip-path: inset(100% 0 0 0); translate: 0 14%; animation: enche .4s cubic-bezier(.2, .7, .1, 1) forwards; }
 @keyframes enche { to { clip-path: inset(0 0 0 0); translate: 0 0; } }
-.ab-haste { transform-box: fill-box; clip-path: inset(0 0 100% 0); translate: 0 -24%; animation: desce .45s cubic-bezier(.2, .7, .1, 1) .36s forwards; }
+.ab-haste { transform-box: fill-box; clip-path: inset(0 0 100% 0); translate: 0 -24%; animation: desce .3s cubic-bezier(.2, .7, .1, 1) .16s forwards; }
 @keyframes desce { to { clip-path: inset(0 0 0 0); translate: 0 0; } }
-.ab-palhetao { transform-box: fill-box; transform-origin: 0 50%; scale: 0 1; animation: roda .3s cubic-bezier(.2, .7, .1, 1.35) .64s forwards; }
+.ab-palhetao { transform-box: fill-box; transform-origin: 0 50%; scale: 0 1; animation: roda .24s cubic-bezier(.2, .7, .1, 1.35) .34s forwards; }
 @keyframes roda { to { scale: 1 1; } }
 .abertura.salta .ab-logo *, .abertura.salta .ab-clique { animation-delay: 0s !important; animation-duration: .001s !important; }
 

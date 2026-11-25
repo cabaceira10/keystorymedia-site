@@ -49,7 +49,7 @@ export default function Abertura() {
     const gestos = ["pointerdown", "keydown"] as const;
     const tira = () => gestos.forEach((t) => removeEventListener(t, salta, true));
     gestos.forEach((t) => addEventListener(t, salta, true));
-    const t = window.setTimeout(() => voa(false), 1500);
+    const t = window.setTimeout(() => voa(false), 950);
     return () => {
       clearTimeout(t);
       clearTimeout(fim);
