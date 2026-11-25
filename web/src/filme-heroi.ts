@@ -15,7 +15,7 @@ export interface Filme {
 export const HERO_FILM: Filme = {
   src720: "campaign/film/filme-foz-do-arelho-720.mp4",
   src1080: "campaign/film/filme-foz-do-arelho-1080.mp4",
-  poster: "campaign/film/filme-foz-do-arelho.webp",
+  poster: "img/drone-foz-do-arelho.webp",
   label: "Casa T3 na Foz do Arelho, filmada pela Keystory para a Dream Maker Imobiliária",
   seconds: 91.5,
   legendasQueimadas: true,
