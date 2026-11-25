@@ -260,19 +260,19 @@ html.abre .consent { display: none; }
 .ped-logo__orbita { background: conic-gradient(from 0deg, rgb(216 195 160 / 0) 0deg, rgb(216 195 160 / 0) 250deg, rgb(236 222 196 / .95) 320deg, rgb(216 195 160 / 0) 360deg); -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 1.5px)); mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 1.5px)); animation: aud-orbita 4s linear infinite; }
 .ped-logo__halo { position: absolute; left: 50%; top: 50%; width: 190px; height: 190px; margin: -95px 0 0 -95px; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgb(216 195 160 / .18), rgb(216 195 160 / .04) 55%, transparent 72%); }
 .ped-marca { display: block; font-size: 17px; font-weight: 700; letter-spacing: -.02em; }
-html:not([data-mov="off"]) .pedido .ped-logo, html:not([data-mov="off"]) .pedido .ped-marca, html:not([data-mov="off"]) .pedido h2, html:not([data-mov="off"]) .pedido .ped-cabeca p, html:not([data-mov="off"]) .pedido .ped-barra, html:not([data-mov="off"]) .pedido .ped-conta, html:not([data-mov="off"]) .pedido .aud-campo, html:not([data-mov="off"]) .pedido .ped-nav, html:not([data-mov="off"]) .pedido .aud-nota { opacity: 0; }
-html:root .pedido.vivo .ped-logo, html:root .pedido.vivo .ped-marca, html:root .pedido.vivo h2, html:root .pedido.vivo .ped-cabeca p, html:root .pedido.vivo .ped-barra, html:root .pedido.vivo .ped-conta, html:root .pedido.vivo .aud-campo, html:root .pedido.vivo .ped-nav, html:root .pedido.vivo .aud-nota { opacity: 1; }
-.pedido.vivo .ped-logo { animation: aud-entra .9s var(--e-saida) both; }
-.pedido.vivo .ped-marca { animation: aud-sobe .7s var(--e-saida) .12s both; }
-.pedido.vivo h2 { animation: aud-sobe .7s var(--e-saida) .2s both; }
-.pedido.vivo .ped-cabeca p { animation: aud-sobe .7s var(--e-saida) .27s both; }
-.pedido.vivo .ped-barra { animation: aud-sobe .55s var(--e-saida) .34s both; }
-.pedido.vivo .ped-conta { animation: aud-sobe .55s var(--e-saida) .4s both; }
-.pedido.vivo .aud-campo { animation: aud-sobe .55s var(--e-saida) .48s both; }
-.pedido.vivo .aud-campo.frente { animation: aud-frente .42s var(--e-saida) both; }
-.pedido.vivo .aud-campo.tras { animation: aud-tras .42s var(--e-saida) both; }
-.pedido.vivo .ped-nav { animation: aud-sobe .55s var(--e-saida) .6s both; }
-.pedido.vivo .aud-nota { animation: aud-sobe .55s var(--e-saida) .7s both; }
+html:not([data-mov="off"]) .ped-zona .ped-logo, html:not([data-mov="off"]) .ped-zona .ped-marca, html:not([data-mov="off"]) .ped-zona h2, html:not([data-mov="off"]) .ped-zona .ped-cabeca p, html:not([data-mov="off"]) .ped-zona .ped-barra, html:not([data-mov="off"]) .ped-zona .ped-conta, html:not([data-mov="off"]) .ped-zona .aud-campo, html:not([data-mov="off"]) .ped-zona .ped-nav, html:not([data-mov="off"]) .ped-zona .aud-nota { opacity: 0; }
+html:root .ped-zona.vivo .ped-logo, html:root .ped-zona.vivo .ped-marca, html:root .ped-zona.vivo h2, html:root .ped-zona.vivo .ped-cabeca p, html:root .ped-zona.vivo .ped-barra, html:root .ped-zona.vivo .ped-conta, html:root .ped-zona.vivo .aud-campo, html:root .ped-zona.vivo .ped-nav, html:root .ped-zona.vivo .aud-nota { opacity: 1; }
+.ped-zona.vivo .ped-logo { animation: aud-entra .9s var(--e-saida) both; }
+.ped-zona.vivo .ped-marca { animation: aud-sobe .7s var(--e-saida) .12s both; }
+.ped-zona.vivo h2 { animation: aud-sobe .7s var(--e-saida) .2s both; }
+.ped-zona.vivo .ped-cabeca p { animation: aud-sobe .7s var(--e-saida) .27s both; }
+.ped-zona.vivo .ped-barra { animation: aud-sobe .55s var(--e-saida) .34s both; }
+.ped-zona.vivo .ped-conta { animation: aud-sobe .55s var(--e-saida) .4s both; }
+.ped-zona.vivo .aud-campo { animation: aud-sobe .55s var(--e-saida) .48s both; }
+.ped-zona.vivo .aud-campo.frente { animation: aud-frente .42s var(--e-saida) both; }
+.ped-zona.vivo .aud-campo.tras { animation: aud-tras .42s var(--e-saida) both; }
+.ped-zona.vivo .ped-nav { animation: aud-sobe .55s var(--e-saida) .6s both; }
+.ped-zona.vivo .aud-nota { animation: aud-sobe .55s var(--e-saida) .7s both; }
 .aud-botao { position: relative; overflow: hidden; width: 100%; min-height: 56px; margin-top: 6px; padding: 0 28px; border: 0; border-radius: 100px; cursor: pointer; appearance: none; touch-action: manipulation; display: inline-flex; align-items: center; justify-content: center; gap: 10px; font: inherit; font-size: 15px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #14202f; background: linear-gradient(180deg, #f4efe8 0%, #d8c3a0 55%, #b39a70 100%); transition: transform .3s var(--e-saida), filter .3s; }
 .aud-botao::after { content: ""; position: absolute; inset: 0; transform: translateX(-120%); background: linear-gradient(100deg, transparent 30%, rgb(255 255 255 / .75) 50%, transparent 70%); animation: aud-brilho 4.5s ease-in-out 1.6s infinite; }
 .aud-botao:hover { transform: scale(1.02); filter: brightness(1.06); }
@@ -299,3 +299,29 @@ html:root .pedido.vivo .ped-logo, html:root .pedido.vivo .ped-marca, html:root .
 .aud-feito { display: flex; gap: 14px; align-items: flex-start; padding: 6px 2px; }
 .aud-feito b { font-size: 1.1rem; }
 .aud-feito p { margin: 4px 0 0; color: rgb(244 239 232 / .7); }
+
+/* the /orcamento layout: logo, brand and headline above the card, stars behind, fields arriving one by one */
+.ped-zona { position: relative; }
+.ped-estrelas { position: absolute; inset: -80px 0; overflow: hidden; pointer-events: none; }
+.ped-estrela { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #f4efe8; opacity: 0; animation: ped-pisca var(--d) ease-in-out var(--a) infinite; }
+@keyframes ped-pisca { 50% { opacity: var(--peak); } }
+html[data-mov="off"] .ped-estrela { animation: none; opacity: calc(var(--peak) * .6); }
+.ped-zona .ped-cabeca { position: relative; margin-bottom: 26px; color: #f4efe8; }
+.ped-zona .ped-logo { width: 112px; margin: 56px auto 54px; }
+.ped-zona .ped-logo__anel, .ped-zona .ped-logo__orbita { width: 186px; height: 186px; margin: -93px 0 0 -93px; }
+.ped-zona .ped-logo__halo { width: 250px; height: 250px; margin: -125px 0 0 -125px; }
+.ped-zona .ped-marca { font-size: 22px; }
+.ped-zona .ped-cabeca h2 { margin: 22px 0 0; font-size: clamp(30px, 6.4vw, 46px); line-height: 1.06; letter-spacing: -.03em; text-wrap: balance; }
+.ped-zona .ped-cabeca p { margin: 12px auto 0; max-width: 46ch; font-size: 16.5px; line-height: 1.5; color: rgb(244 239 232 / .74); }
+.ped-zona .pedido { position: relative; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.ped-zona.vivo .pedido { animation: aud-sobe .8s var(--e-saida, cubic-bezier(.16, 1, .3, 1)) .45s both; }
+.ped-zona.vivo .aud-campo.frente > *, .ped-zona.vivo .aud-campo.tras > * { animation: ped-campo .42s cubic-bezier(.22, 1, .36, 1) backwards; }
+.aud-campo > :nth-child(1) { animation-delay: 80ms; } .aud-campo > :nth-child(2) { animation-delay: 140ms; } .aud-campo > :nth-child(3) { animation-delay: 200ms; } .aud-campo > :nth-child(n+4) { animation-delay: 260ms; }
+@keyframes ped-campo { from { opacity: 0; transform: translate3d(0, .75rem, 0); } }
+@media (max-width: 560px) {
+  .ped-zona .ped-logo { width: 88px; margin: 44px auto 44px; }
+  .ped-zona .ped-logo__anel, .ped-zona .ped-logo__orbita { width: 150px; height: 150px; margin: -75px 0 0 -75px; }
+  .ped-zona .ped-logo__halo { width: 200px; height: 200px; margin: -100px 0 0 -100px; }
+  .ped-zona .ped-cabeca h2 { margin-top: 14px; }
+  .ped-zona .ped-cabeca p { font-size: 15.5px; }
+}

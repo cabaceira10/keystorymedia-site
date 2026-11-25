@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type FormEvent, type KeyboardEvent } from "react";
 import { A, R, WA_NUMERO } from "../../base";
 
 // The Imogrow audit form (imogrow-static/auditoria.html), copied: same card, same logo in its orbit, same three
@@ -8,6 +8,12 @@ const ECRAS = [
   { titulo: "Para onde respondemos", sub: "O orçamento chega-te por WhatsApp.", rotulo: "O teu WhatsApp", nome: "telefone", tipo: "tel", modo: "tel", auto: "tel", dica: "O teu número", erro: "Esse número não parece completo. É por lá que te mandamos o orçamento." },
   { titulo: "Com quem falamos", sub: "Para sabermos quem és.", rotulo: "O teu nome", nome: "nome", tipo: "text", modo: "text", auto: "name", dica: "Nome e agência", erro: "Diz-nos o teu nome." },
 ] as const;
+
+// A fixed sky: the same stars on every render, so nothing jumps when React paints again.
+const ESTRELAS = Array.from({ length: 44 }, (_, i) => {
+  const r = (n: number) => ((Math.sin(i * 12.9898 + n * 78.233) * 43758.5453) % 1 + 1) % 1;
+  return { left: `${r(1) * 100}%`, top: `${r(2) * 100}%`, "--d": `${r(3) * 3 + 2}s`, "--a": `${r(4) * 5}s`, "--peak": String(0.15 + r(5) * 0.65) } as CSSProperties;
+});
 
 export default function Pedido() {
   const cartao = useRef<HTMLDivElement>(null);
@@ -29,7 +35,7 @@ export default function Pedido() {
         setVivo(true);
         io.disconnect();
       },
-      { threshold: 0.2 },
+      { threshold: 0.12 },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -73,7 +79,12 @@ export default function Pedido() {
 
   return (
     <section id="contacto" aria-labelledby="t-contacto" className="relative px-4 py-20 sm:px-8 sm:py-24">
-      <div ref={cartao} className={`pedido mx-auto max-w-[560px] ${vivo ? "vivo" : ""}`}>
+      <div ref={cartao} className={`ped-zona mx-auto max-w-[560px] ${vivo ? "vivo" : ""}`}>
+        <div className="ped-estrelas" aria-hidden="true">
+          {ESTRELAS.map((e, i) => (
+            <span key={i} className="ped-estrela" style={e} />
+          ))}
+        </div>
         <div className="ped-cabeca">
           <div className="ped-logo" aria-hidden="true">
             <div className="ped-logo__halo" />
@@ -83,8 +94,9 @@ export default function Pedido() {
           </div>
           <span className="ped-marca">Keystory</span>
           <h2 id="t-contacto">Pede o teu orçamento.</h2>
-          <p>Sem reunião e sem compromisso.</p>
+          <p>Sem reunião e sem compromisso. Respondemos com o plano e as condições.</p>
         </div>
+        <div className="pedido">
         {feito ? (
           <div className="aud-feito" role="status">
             <div className="aud-selo">
@@ -159,6 +171,7 @@ export default function Pedido() {
             </p>
           </form>
         )}
+        </div>
       </div>
     </section>
   );
