@@ -218,7 +218,6 @@ video::-webkit-media-controls-start-playback-button { display: none !important; 
 video:not([controls])::-webkit-media-controls { display: none !important; }
 video:not([controls])::-webkit-media-controls-panel { display: none !important; }
 .gancho { text-shadow: 0 2px 0 rgb(13 22 33 / .55), 0 10px 40px rgb(13 22 33 / .9); }
-.contorno { color: transparent; -webkit-text-stroke: 1.5px rgb(216 195 160 / .8); }
 .contorno-escuro { color: transparent; -webkit-text-stroke: 1.5px rgb(143 118 83 / .28); }
 
 /* Meta consent bar injected by public/pixel.js */
