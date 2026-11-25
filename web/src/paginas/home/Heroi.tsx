@@ -81,7 +81,7 @@ export default function Heroi() {
         </motion.div>
 
         <motion.p {...entra(0.6)} className="mt-7 max-w-xl text-pretty text-[15px] leading-relaxed text-ink/80 sm:text-base">
-          Num só dia filmamos o imóvel. Recebes <strong className="font-bold text-ink">fotografias em 48 horas e vídeo em 5 dias úteis</strong>, feitos pela equipa que já filmou para a Dream Maker Imobiliária, o Tomás Marques e o Aurélio Marques.
+          Num só dia filmamos o imóvel. Recebes <strong className="font-bold text-ink">fotografias em 48 horas e vídeo em 5 dias úteis</strong>, feitos pela equipa que já filmou para a Dream Maker Imobiliária, o Tomás Marques e o Aurélio Cavaleiro.
         </motion.p>
 
         <motion.div {...entra(0.7)} className="mb-12 mt-6 w-full sm:mb-16 sm:w-auto">

@@ -1,6 +1,6 @@
 import { Surge } from "../../ui";
 
-const NOMES = ["Dream Maker Imobiliária", "Tomás Marques", "Aurélio Marques"];
+const NOMES = ["Dream Maker Imobiliária", "Tomás Marques", "Aurélio Cavaleiro"];
 const NUMEROS = [
   ["1", "dia", "de filmagem: vídeo, fotografia e drone"],
   ["48", "horas", "e tens as fotografias"],
@@ -23,7 +23,7 @@ export default function Prova() {
           ))}
         </div>
       </div>
-      <p className="sr-only">Dream Maker Imobiliária, Tomás Marques e Aurélio Marques.</p>
+      <p className="sr-only">Dream Maker Imobiliária, Tomás Marques e Aurélio Cavaleiro.</p>
       <div className="mx-auto mt-12 grid max-w-6xl grid-cols-3 gap-3 px-5 sm:mt-16 sm:gap-8 sm:px-8">
         {NUMEROS.map(([n, u, d], i) => (
           <Surge key={u} atraso={i * 0.08}>

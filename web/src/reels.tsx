@@ -11,10 +11,10 @@ export interface Reel {
 
 /** The six 9:16 reels, in the order of the reels body sentence: the first three (copy deck 3.2), then the three added after them. */
 export const REELS: readonly Reel[] = [
-  { id: "reel-casa-nazare", titulo: "Casa na Nazaré, para o Aurélio Marques." },
+  { id: "reel-casa-nazare", titulo: "Casa na Nazaré, para o Aurélio Cavaleiro." },
   { id: "reel-tomas-marques", titulo: "Marca pessoal do Tomás Marques." },
   { id: "reel-apartamento-nazare-2", titulo: "Apartamento na Nazaré, com drone." },
-  { id: "reel-casa-nazare-2", titulo: "Casa na Nazaré, para o Aurélio Marques." },
+  { id: "reel-casa-nazare-2", titulo: "Casa na Nazaré, para o Aurélio Cavaleiro." },
   { id: "reel-apartamento-nazare", titulo: "Apartamento na Nazaré, por dentro." },
   { id: "reel-terreno", titulo: "Terreno com o lote marcado na imagem." },
 ]
