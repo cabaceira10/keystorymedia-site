@@ -43,6 +43,7 @@ export function Carrossel({ reels = REELS, rotulo = "Reels da Keystory" }: { ree
     const N = dados.length;
     let cur = 0;
     let dentro = false;
+    let perto = false;
     let somLigado = false;
     let arrastou = false;
 
@@ -141,7 +142,7 @@ export function Carrossel({ reels = REELS, rotulo = "Reels da Keystory" }: { ree
         const v = li.querySelector("video")!;
         if (a) li.dataset.mao = "";
         if (a <= 1 && !v.getAttribute("src")) v.src = v.dataset.src!;
-        if (a <= 1 && dentro) v.preload = a === 0 ? "auto" : "metadata";
+        if (a <= 1 && (dentro || perto)) v.preload = a === 0 ? "auto" : "metadata";
         const anda = a === 0 && dentro && !li.dataset.mao && (!parado() || somLigado);
         // muted autoplay only on the front reel while the deck is in view, so the neighbours never load and play behind it
         v.autoplay = anda;
@@ -294,6 +295,17 @@ export function Carrossel({ reels = REELS, rotulo = "Reels da Keystory" }: { ree
       { threshold: 0.3 },
     );
     io.observe(raiz);
+    // start loading the front reel one screen before the deck arrives, so it plays the moment it is seen
+    const ioPerto = new IntersectionObserver(
+      (es) => {
+        if (!es[0].isIntersecting) return;
+        perto = true;
+        ioPerto.disconnect();
+        pinta();
+      },
+      { rootMargin: "1200px 0px" },
+    );
+    ioPerto.observe(raiz);
     const vis = () => {
       if (document.hidden) lis[cur].querySelector("video")!.pause();
       else pinta();
@@ -354,7 +366,7 @@ export function Carrossel({ reels = REELS, rotulo = "Reels da Keystory" }: { ree
 /** The deck in its section: rises when a quarter is in view, then the front reel plays. */
 export function MesaReels({ className = "" }: { className?: string }) {
   const mesa = useRef<HTMLDivElement>(null);
-  const pousou = useInView(mesa, { once: true, amount: 0.25 });
+  const pousou = useInView(mesa, { once: true, margin: "0px 0px 300px 0px" });
   return (
     <div ref={mesa} className={`mesa relative mx-auto max-w-7xl px-5 sm:px-8 ${pousou ? "pousou" : ""} ${className}`}>
       <div className="mesa-reels">
