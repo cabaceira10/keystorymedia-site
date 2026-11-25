@@ -154,13 +154,13 @@ body { margin: 0; color: var(--color-texto); font-family: var(--font-sans); -web
 @media (hover: hover) { .reels-seta:hover { background: rgba(255, 255, 255, .1); } }
 
 /* reels on the drawing table: the contract draws itself line by line */
-.mesa { --mw: max(140px, min(44vw, 190px)); }
+.mesa { --mw: max(180px, min(58vw, 300px)); }
 .mesa .reels { --rw: var(--mw); gap: 24px; }
 .mesa-planta { position: absolute; z-index: 0; left: 50%; top: -12px; width: min(84vw, 360px); margin-left: calc(min(84vw, 360px) / -2); opacity: .32; pointer-events: none; }
 .mesa-planta .planta-rotulos { display: none; }
 .mesa-reels { position: relative; z-index: 1; }
 @media (min-width: 900px) {
-  .mesa { --mw: max(170px, min(220px, 15vw, calc((100svh - 340px) * 9 / 16))); display: grid; grid-template-columns: min(900px, 62vw); justify-content: center; align-items: center; }
+  .mesa { --mw: max(240px, min(360px, 26vw, calc((100svh - 200px) * 9 / 16))); display: grid; grid-template-columns: min(1100px, 92vw); justify-content: center; align-items: center; }
   .mesa-planta { position: relative; left: auto; top: auto; width: min(500px, 34vw); margin: 0; opacity: .6; }
   .mesa-planta .planta-rotulos { display: inline; }
 }
