@@ -9,18 +9,20 @@ const FOTOS = [
   { titulo: "Apartamento Nazaré II", dir: "apartamento-nazare-2", n: 10 },
 ] as const;
 
-const RENDERS = [
+const RENDERS: readonly { titulo: string; src?: string; yt?: string; poster: string }[] = [
   { titulo: "Terreno Nazaré I", src: "campaign/film/ai-terreno-nazare-1.mp4", poster: "img/ai-terreno-nazare.webp" },
   { titulo: "Terreno Nazaré II", src: "campaign/film/ai-terreno-nazare-2.mp4", poster: "img/ai-terreno-nazare-2.webp" },
-] as const;
+  { titulo: "Terreno Pataias", yt: "f-Po_TZZB1s", poster: "img/ai-terreno-pataias.webp" },
+];
 
 const foto = (dir: string, i: number, mini = false) => A(`assets/img/${dir}/${String(i + 1).padStart(2, "0")}${mini ? "-t" : ""}.webp`);
 
 /** A film that starts on the tap, with sound (iOS needs play() inside the gesture). */
-function Filme({ titulo, src, poster }: { titulo: string; src: string; poster: string }) {
+function Filme({ titulo, src, yt, poster }: { titulo: string; src?: string; yt?: string; poster: string }) {
   const v = useRef<HTMLVideoElement>(null);
   const [anda, setAnda] = useState(false);
   const toca = () => {
+    if (yt) return setAnda(true);
     const el = v.current!;
     el.muted = false;
     el.play().catch(() => {
@@ -32,7 +34,15 @@ function Filme({ titulo, src, poster }: { titulo: string; src: string; poster: s
   return (
     <figure>
       <div className="relative aspect-video overflow-hidden rounded-2xl bg-night ring-1 ring-white/10">
-        <video ref={v} src={A(src)} poster={A(poster)} preload="none" playsInline controls={anda} aria-label={titulo} className="h-full w-full object-cover" />
+        {yt ? (
+          anda ? (
+            <iframe src={`https://www.youtube-nocookie.com/embed/${yt}?autoplay=1&rel=0&playsinline=1`} title={titulo} allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen className="h-full w-full border-0" />
+          ) : (
+            <img src={A(poster)} alt="" loading="lazy" className="h-full w-full object-cover" />
+          )
+        ) : (
+          <video ref={v} src={A(src!)} poster={A(poster)} preload="none" playsInline controls={anda} aria-label={titulo} className="h-full w-full object-cover" />
+        )}
         {!anda && (
           <button type="button" onClick={toca} aria-label={`Ver o vídeo: ${titulo}`} className="group absolute inset-0 grid place-items-center bg-night/25">
             <span className="grid h-16 w-16 place-items-center rounded-full bg-marfim sm:h-24 sm:w-24 text-ink shadow-[0_0_0_8px_rgba(244,239,232,.2),0_18px_40px_-8px_rgba(0,0,0,.8)] transition duration-300 group-hover:scale-110">
@@ -125,9 +135,9 @@ export default function Portefolio() {
         <h3 className="mt-20 text-2xl font-extrabold uppercase tracking-[-0.01em] text-white sm:text-4xl">Renders com IA</h3>
         <p className="mt-2 max-w-2xl text-pretty text-[15px] leading-relaxed text-mute">Filmamos o terreno ou a obra e usamos IA para revelar o projeto acabado. O comprador vê a casa antes de haver casa.</p>
       </Surge>
-      <div className="mt-6 grid gap-6 xl:grid-cols-2">
+      <div className="mt-6 grid gap-6 lg:grid-cols-3">
         {RENDERS.map((r) => (
-          <Filme key={r.src} {...r} />
+          <Filme key={r.titulo} {...r} />
         ))}
       </div>
 

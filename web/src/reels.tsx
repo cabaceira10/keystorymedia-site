@@ -9,14 +9,11 @@ export interface Reel {
   titulo: string;
 }
 
-/** The six 9:16 reels, in the order of the reels body sentence: the first three (copy deck 3.2), then the three added after them. */
+/** The three 9:16 reels on the deck, self-hosted (two of them cannot go on YouTube). */
 export const REELS: readonly Reel[] = [
-  { id: "reel-casa-nazare", titulo: "Casa na Nazaré, para o Aurélio Cavaleiro." },
-  { id: "reel-tomas-marques", titulo: "Marca pessoal do Tomás Marques." },
-  { id: "reel-apartamento-nazare-2", titulo: "Apartamento na Nazaré, com drone." },
-  { id: "reel-casa-nazare-2", titulo: "Casa na Nazaré, para o Aurélio Cavaleiro." },
-  { id: "reel-apartamento-nazare", titulo: "Apartamento na Nazaré, por dentro." },
-  { id: "reel-terreno", titulo: "Terreno com o lote marcado na imagem." },
+  { id: "reel-casa-avenal", titulo: "Casa Avenal, para o Tomás Marques." },
+  { id: "reel-t4-caldas", titulo: "Apartamento T4 com terraço nas Caldas." },
+  { id: "reel-apartamento-t2-nazare", titulo: "Apartamento T2 com garagem na Nazaré, para o Aurélio Cavaleiro." },
 ]
 
 const SVG_SOM_ON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor" stroke="none"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>';

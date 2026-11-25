@@ -160,7 +160,7 @@ body { margin: 0; color: var(--color-texto); font-family: var(--font-sans); -web
 .mesa-planta .planta-rotulos { display: none; }
 .mesa-reels { position: relative; z-index: 1; }
 @media (min-width: 900px) {
-  .mesa { --mw: max(170px, min(220px, 15vw, calc((100svh - 340px) * 9 / 16))); display: grid; grid-template-columns: minmax(0, 1fr) min(900px, 62vw); align-items: center; }
+  .mesa { --mw: max(170px, min(220px, 15vw, calc((100svh - 340px) * 9 / 16))); display: grid; grid-template-columns: min(900px, 62vw); justify-content: center; align-items: center; }
   .mesa-planta { position: relative; left: auto; top: auto; width: min(500px, 34vw); margin: 0; opacity: .6; }
   .mesa-planta .planta-rotulos { display: inline; }
 }
