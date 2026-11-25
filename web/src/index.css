@@ -233,3 +233,69 @@ html.abre .consent { display: none; }
 .consent { animation: consent-sobe .5s cubic-bezier(.2, .7, .1, 1) .4s both; }
 @keyframes consent-sobe { from { opacity: 0; translate: 0 16px; } }
 .consent__msg a { color: var(--color-areia); text-decoration: underline; white-space: nowrap; }
+
+/* The request card: the Imogrow audit form, copied, in the Keystory palette */
+.pedido { --e-saida: cubic-bezier(.16, 1, .3, 1); padding: clamp(20px, 3.4vw, 34px); border-radius: 24px; color: #f4efe8; background: rgb(13 22 33 / .72); border: 1px solid rgb(244 239 232 / .1); box-shadow: inset 0 1px 0 rgb(255 255 255 / .07), 0 40px 90px -44px rgb(0 0 0 / .98); }
+.ped-barra { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.ped-barra span { height: 3px; border-radius: 3px; background: rgb(244 239 232 / .14); transition: background-color .4s ease; }
+.ped-barra span.feito { background: #d8c3a0; }
+.ped-conta { margin: 10px 0 16px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: rgb(244 239 232 / .5); font-weight: 600; }
+.ecra-titulo { margin: 0 0 4px; font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
+.ecra-sub { margin: 0 0 18px; font-size: 14.5px; color: rgb(244 239 232 / .62); }
+.ecra[hidden] { display: none; }
+@keyframes aud-frente { from { opacity: 0; transform: translate3d(1.75rem, 0, 0); } }
+@keyframes aud-tras { from { opacity: 0; transform: translate3d(-1.75rem, 0, 0); } }
+.ped-nav { display: flex; align-items: center; gap: 12px; margin-top: 6px; }
+.ped-nav .aud-botao { margin-top: 0; flex: 1 1 auto; }
+.ped-voltar { appearance: none; touch-action: manipulation; cursor: pointer; font: inherit; font-size: 14px; font-weight: 600; color: rgb(244 239 232 / .75); background: transparent; border: 1px solid rgb(244 239 232 / .2); border-radius: 100px; min-height: 48px; padding: 0 18px; transition: border-color .25s ease, color .25s ease; }
+.ped-voltar:hover { border-color: rgb(244 239 232 / .55); color: #f4efe8; }
+.ped-voltar:focus-visible { outline: 2px solid #f4efe8; outline-offset: 3px; }
+.ped-cabeca { text-align: center; margin-bottom: 22px; }
+.ped-cabeca h2 { margin: 14px 0 4px; font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
+.ped-cabeca p { margin: 0; font-size: 14.5px; color: rgb(244 239 232 / .62); }
+.ped-logo { position: relative; width: 96px; aspect-ratio: 715 / 566; margin: 44px auto 40px; }
+.ped-logo__base { position: absolute; inset: 0; background: linear-gradient(180deg, #f4efe8 0%, #d8c3a0 100%); -webkit-mask: center / contain no-repeat; mask: center / contain no-repeat; animation: aud-respira 3.2s ease-in-out infinite alternate; }
+.ped-logo__anel, .ped-logo__orbita { position: absolute; left: 50%; top: 50%; width: 150px; height: 150px; margin: -75px 0 0 -75px; border-radius: 50%; pointer-events: none; }
+.ped-logo__anel { border: 1px solid rgb(244 239 232 / .12); }
+.ped-logo__orbita { background: conic-gradient(from 0deg, rgb(216 195 160 / 0) 0deg, rgb(216 195 160 / 0) 250deg, rgb(236 222 196 / .95) 320deg, rgb(216 195 160 / 0) 360deg); -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 1.5px)); mask: radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 1.5px)); animation: aud-orbita 4s linear infinite; }
+.ped-logo__halo { position: absolute; left: 50%; top: 50%; width: 190px; height: 190px; margin: -95px 0 0 -95px; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgb(216 195 160 / .18), rgb(216 195 160 / .04) 55%, transparent 72%); }
+.ped-marca { display: block; font-size: 17px; font-weight: 700; letter-spacing: -.02em; }
+html:not([data-mov="off"]) .pedido .ped-logo, html:not([data-mov="off"]) .pedido .ped-marca, html:not([data-mov="off"]) .pedido h2, html:not([data-mov="off"]) .pedido .ped-cabeca p, html:not([data-mov="off"]) .pedido .ped-barra, html:not([data-mov="off"]) .pedido .ped-conta, html:not([data-mov="off"]) .pedido .aud-campo, html:not([data-mov="off"]) .pedido .ped-nav, html:not([data-mov="off"]) .pedido .aud-nota { opacity: 0; }
+html:root .pedido.vivo .ped-logo, html:root .pedido.vivo .ped-marca, html:root .pedido.vivo h2, html:root .pedido.vivo .ped-cabeca p, html:root .pedido.vivo .ped-barra, html:root .pedido.vivo .ped-conta, html:root .pedido.vivo .aud-campo, html:root .pedido.vivo .ped-nav, html:root .pedido.vivo .aud-nota { opacity: 1; }
+.pedido.vivo .ped-logo { animation: aud-entra .9s var(--e-saida) both; }
+.pedido.vivo .ped-marca { animation: aud-sobe .7s var(--e-saida) .12s both; }
+.pedido.vivo h2 { animation: aud-sobe .7s var(--e-saida) .2s both; }
+.pedido.vivo .ped-cabeca p { animation: aud-sobe .7s var(--e-saida) .27s both; }
+.pedido.vivo .ped-barra { animation: aud-sobe .55s var(--e-saida) .34s both; }
+.pedido.vivo .ped-conta { animation: aud-sobe .55s var(--e-saida) .4s both; }
+.pedido.vivo .aud-campo { animation: aud-sobe .55s var(--e-saida) .48s both; }
+.pedido.vivo .aud-campo.frente { animation: aud-frente .42s var(--e-saida) both; }
+.pedido.vivo .aud-campo.tras { animation: aud-tras .42s var(--e-saida) both; }
+.pedido.vivo .ped-nav { animation: aud-sobe .55s var(--e-saida) .6s both; }
+.pedido.vivo .aud-nota { animation: aud-sobe .55s var(--e-saida) .7s both; }
+.aud-botao { position: relative; overflow: hidden; width: 100%; min-height: 56px; margin-top: 6px; padding: 0 28px; border: 0; border-radius: 100px; cursor: pointer; appearance: none; touch-action: manipulation; display: inline-flex; align-items: center; justify-content: center; gap: 10px; font: inherit; font-size: 15px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #14202f; background: linear-gradient(180deg, #f4efe8 0%, #d8c3a0 55%, #b39a70 100%); transition: transform .3s var(--e-saida), filter .3s; }
+.aud-botao::after { content: ""; position: absolute; inset: 0; transform: translateX(-120%); background: linear-gradient(100deg, transparent 30%, rgb(255 255 255 / .75) 50%, transparent 70%); animation: aud-brilho 4.5s ease-in-out 1.6s infinite; }
+.aud-botao:hover { transform: scale(1.02); filter: brightness(1.06); }
+.aud-botao:active { transform: scale(.975); }
+.aud-botao:focus-visible { outline: 2px solid #f4efe8; outline-offset: 3px; }
+.aud-selo { flex: none; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: #d8c3a0; color: #14202f; animation: aud-entra .6s var(--e-saida) both; }
+.aud-selo path { stroke-dasharray: 24; stroke-dashoffset: 24; animation: aud-traco .5s var(--e-saida) .25s forwards; }
+@keyframes aud-entra { from { opacity: 0; transform: scale(.86); } }
+@keyframes aud-sobe { from { opacity: 0; transform: translate3d(0, 14px, 0); } }
+@keyframes aud-orbita { to { transform: rotate(360deg); } }
+@keyframes aud-respira { from { filter: brightness(.94); } to { filter: brightness(1.08); } }
+@keyframes aud-brilho { 0%, 70% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+@keyframes aud-traco { to { stroke-dashoffset: 0; } }
+.aud-campo { margin-bottom: 16px; }
+.aud-campo label { display: block; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: rgb(244 239 232 / .6); margin-bottom: 8px; }
+.aud-campo input { width: 100%; appearance: none; font: inherit; font-size: 17px; color: #f4efe8; background: rgb(244 239 232 / .04); border: 1px solid rgb(244 239 232 / .16); border-radius: 14px; padding: 14px 16px; min-height: 54px; transition: border-color .25s ease, background-color .25s ease; }
+.aud-campo input::placeholder { color: rgb(244 239 232 / .34); }
+.aud-campo input:focus { outline: none; border-color: #d8c3a0; background: rgb(244 239 232 / .06); }
+.aud-campo input[aria-invalid="true"] { border-color: #e3776a; }
+.aud-erro { margin: 0; font-size: 13.5px; color: #f1a79e; }
+.aud-erro:not(:empty) { margin: -6px 0 12px; }
+.aud-nota { margin: 12px 0 0; font-size: 13.5px; line-height: 1.5; color: rgb(244 239 232 / .5); text-align: center; }
+.aud-nota a, .aud-feito a { color: rgb(244 239 232 / .8); text-decoration: underline; }
+.aud-feito { display: flex; gap: 14px; align-items: flex-start; padding: 6px 2px; }
+.aud-feito b { font-size: 1.1rem; }
+.aud-feito p { margin: 4px 0 0; color: rgb(244 239 232 / .7); }
