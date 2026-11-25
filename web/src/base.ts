@@ -27,7 +27,7 @@ export const movLigado = () => document.documentElement.dataset.mov !== "off";
 export const FALAR = "Falar no WhatsApp";
 export const TELEFONE = "+351 910 491 092";
 export const INSTAGRAM = "https://www.instagram.com/keystorymedia/";
-const WA_NUMERO = "351910491092";
+export const WA_NUMERO = "351910491092";
 const WA_TEXTO = "Olá! Vi o site da Keystory e gostei do vosso trabalho. Sou agente imobiliário e queria saber mais sobre como podem ajudar-me.";
 export const WA_HREF = `https://wa.me/${WA_NUMERO}?text=${encodeURIComponent(WA_TEXTO)}`;
 

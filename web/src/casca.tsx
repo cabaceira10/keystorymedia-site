@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { AnimatePresence, motion, MotionConfig, MotionGlobalConfig } from "framer-motion";
-import { CHAVE_CALMO, FALAR, INSTAGRAM, NAV, R, TELEFONE, WA_HREF, curva } from "./base";
-import { DuasLinhas, Instagram, Logotipo, MovContexto, Surge, WhatsApp, tituloH2 } from "./ui";
+import { CHAVE_CALMO, FALAR, INSTAGRAM, NAV, R, WA_HREF, curva } from "./base";
+import { Logotipo, MovContexto, WhatsApp } from "./ui";
 
 /* ---------------- sky ---------------- */
 function Ceu() {
@@ -102,47 +102,6 @@ function Topo() {
   );
 }
 
-/* ---------------- contact (replaces the demo form: Keystory takes contact on WhatsApp only) ---------------- */
-function Contacto() {
-  return (
-    <section id="contacto" aria-labelledby="t-contacto" className="relative overflow-hidden px-4 py-20 sm:px-8 sm:py-24">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-1/2 h-[520px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(216,195,160,.16),transparent)]" />
-      </div>
-      <div className="relative mx-auto max-w-3xl text-center">
-        <Surge>
-          <h2 id="t-contacto" className={tituloH2}>
-            <DuasLinhas l={["Marca a tua", "primeira filmagem."]} />
-          </h2>
-        </Surge>
-        <Surge atraso={0.08}>
-          <p className="mx-auto mt-4 max-w-xl text-pretty text-base leading-relaxed text-mute sm:text-lg">
-            Diz-nos o imóvel ou a marca que queres mostrar. Respondemos no WhatsApp com o plano e as condições.
-          </p>
-        </Surge>
-        <Surge atraso={0.16}>
-          <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-            <a
-              href={WA_HREF}
-              target="_blank"
-              rel="noopener"
-              data-cta="contacto"
-              className="inline-flex h-14 items-center justify-center gap-2.5 rounded-full bg-wa px-6 text-[13px] font-extrabold uppercase sm:px-8 sm:text-[15px] tracking-[0.02em] text-[#06210f] shadow-[0_10px_40px_-10px_rgba(37,211,102,.6)] transition hover:brightness-110"
-            >
-              <WhatsApp className="h-5 w-5" />
-              Quero marcar a minha filmagem
-            </a>
-            <a href={INSTAGRAM} target="_blank" rel="noopener" aria-label="Instagram @keystorymedia" className="inline-flex h-14 items-center justify-center gap-2.5 rounded-xl border border-white/15 bg-white/[.03] px-6 text-base font-medium text-white backdrop-blur transition hover:border-white/30 hover:bg-white/[.07]">
-              <Instagram className="h-5 w-5" />
-              @keystorymedia
-            </a>
-          </div>
-          <p className="mt-5 text-sm text-mute">{TELEFONE}</p>
-        </Surge>
-      </div>
-    </section>
-  );
-}
 
 /* ---------------- footer ---------------- */
 function Rodape({ mov, setMov }: { mov: boolean; setMov: (v: boolean) => void }) {
@@ -258,7 +217,6 @@ export default function Casca({ children }: { children: (mov: boolean) => ReactN
         <Topo />
         <main id="conteudo" tabIndex={-1} className="overflow-x-clip outline-none">
           {children(mov)}
-          <Contacto />
         </main>
         <Rodape mov={mov} setMov={setMov} />
         <Fixo />

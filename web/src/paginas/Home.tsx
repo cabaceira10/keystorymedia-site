@@ -1,6 +1,7 @@
 import Abertura from "../abertura";
 import ComoFunciona from "./home/ComoFunciona";
 import Heroi from "./home/Heroi";
+import Pedido from "./home/Pedido";
 import Perguntas from "./home/Perguntas";
 import Portefolio from "./home/Portefolio";
 import Reels from "./home/Reels";
@@ -16,6 +17,7 @@ export default function Home(_: { mov: boolean }) {
       <Servicos />
       <Portefolio />
       <ComoFunciona />
+      <Pedido />
       <Perguntas />
     </>
   );
