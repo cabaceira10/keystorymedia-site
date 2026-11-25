@@ -160,6 +160,9 @@ function Rodape({ mov, setMov }: { mov: boolean; setMov: (v: boolean) => void })
           <a href={INSTAGRAM} target="_blank" rel="noopener" className={link}>
             Instagram
           </a>
+          <a href={R("privacidade/")} className={link}>
+            Privacidade e cookies
+          </a>
           <button type="button" aria-pressed={!mov} onClick={() => setMov(!mov)} className={`${link} text-left`}>
             {mov ? "Reduzir movimento" : "Ligar movimento"}
           </button>

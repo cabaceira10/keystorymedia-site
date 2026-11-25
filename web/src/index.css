@@ -233,3 +233,4 @@ video:not([controls])::-webkit-media-controls-panel { display: none !important; 
 html.abre .consent { display: none; }
 .consent { animation: consent-sobe .5s cubic-bezier(.2, .7, .1, 1) .4s both; }
 @keyframes consent-sobe { from { opacity: 0; translate: 0 16px; } }
+.consent__msg a { color: var(--color-areia); text-decoration: underline; white-space: nowrap; }
