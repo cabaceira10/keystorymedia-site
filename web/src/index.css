@@ -184,42 +184,52 @@ html:not([data-mov="off"]) .mesa.pousou .reels-palco { translate: 0 0; opacity: 
 @keyframes rotulo { to { opacity: 1; } }
 @keyframes scan { 0% { opacity: 0; translate: 0 0; } 12%, 88% { opacity: 1; } 100% { opacity: 0; translate: 0 254px; } }
 
-/* home intro: built only from the mark's own strokes; runs only with html.abre */
+/* home intro: the real mark, then two doors swinging into the house; runs only with html.abre */
 html.abre, html.abre body { overflow: hidden; }
 html.abre [data-logo-topo] { opacity: 0; }
-.abertura { position: fixed; inset: 0; z-index: 80; pointer-events: none; }
-.abertura-fundo { position: absolute; inset: 0; background: var(--color-ink); clip-path: inset(0 0 0 0); }
-.abertura-fundo::before { content: ""; position: absolute; inset: 0; background: radial-gradient(closest-side, rgb(216 195 160 / .16), transparent) 50% 46% / 900px 600px no-repeat; }
-.abertura-corte { position: absolute; inset: 0; opacity: 0; transform: translateY(100%); pointer-events: none; }
-.abertura-corte::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; background: var(--color-mint); box-shadow: 0 0 18px 4px rgba(236, 222, 196, .7); }
-.abertura.sai .abertura-fundo { animation: levanta .6s cubic-bezier(.65, 0, .35, 1) forwards; }
-.abertura.sai .abertura-corte { animation: corte .6s cubic-bezier(.65, 0, .35, 1) forwards; }
-@keyframes levanta { to { clip-path: inset(0 0 100% 0); } }
-@keyframes corte { 0% { transform: translateY(100%); opacity: 1; } 85% { opacity: 1; } 100% { transform: translateY(0); opacity: 0; } }
-.abertura-logo {
-  --m: clamp(72px, 19vw, 150px);
-  position: absolute; left: 50%; top: 46%; display: flex; align-items: center; gap: calc(var(--m) * .2667);
-  transform-origin: 0 0; translate: calc(-50% + var(--desvio, 0px)) -50%;
-  animation: centra .45s cubic-bezier(.65, 0, .35, 1) 1s forwards;
-}
-@keyframes centra { to { translate: -50% -50%; } }
-.abertura-marca { position: relative; height: var(--m); width: auto; flex: none; overflow: visible; color: var(--color-areia); }
-.abertura-nomecx { position: relative; display: block; }
-.abertura-nome { display: block; height: calc(var(--m) * .36); width: auto; color: var(--color-areia); clip-path: inset(-20% 100% -20% 0); animation: escreve .5s cubic-bezier(.65, 0, .35, 1) 1.05s forwards; }
-@keyframes escreve { to { clip-path: inset(-20% 0 -20% 0); } }
-.abertura-feixe { position: absolute; top: -10%; bottom: -10%; left: 0; right: 0; opacity: 0; pointer-events: none; animation: varre .5s cubic-bezier(.65, 0, .35, 1) 1.05s; }
-.abertura-feixe::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 2px; border-radius: 2px; background: var(--color-mint); box-shadow: 0 0 16px 3px rgba(236, 222, 196, .85); }
-@keyframes varre { 0% { transform: translateX(0); opacity: 0; } 12%, 88% { opacity: 1; } 100% { transform: translateX(100%); opacity: 0; } }
-.ab-letras { clip-path: inset(100% 0 0 0); animation: enche .55s cubic-bezier(.65, 0, .35, 1) .05s forwards; }
-@keyframes enche { to { clip-path: inset(0 0 0 0); } }
-.ab-haste { transform-box: fill-box; transform-origin: 50% 0; translate: 0 -40%; opacity: 0; animation: desce .45s cubic-bezier(.2, .7, .1, 1) .45s forwards; }
-@keyframes desce { to { translate: 0 0; opacity: 1; } }
-.ab-palhetao { transform-box: fill-box; transform-origin: 0 50%; scale: 0 1; animation: roda .28s cubic-bezier(.2, .7, .1, 1.4) .82s forwards; }
+.abertura { position: fixed; inset: 0; z-index: 80; pointer-events: none; perspective: 1500px; perspective-origin: 50% 46%; }
+.ab-porta { position: absolute; top: 0; bottom: 0; width: 50.2%; background-color: var(--color-night); backface-visibility: hidden; will-change: transform; }
+.ab-porta.e { left: 0; transform-origin: 0 50%; background-image: radial-gradient(60vmax 45vmax at 100% 46%, rgb(216 195 160 / .13), transparent 70%); }
+.ab-porta.d { right: 0; transform-origin: 100% 50%; background-image: radial-gradient(60vmax 45vmax at 0% 46%, rgb(216 195 160 / .13), transparent 70%); }
+.ab-porta::after { content: ""; position: absolute; inset: 0; background: #05090e; opacity: 0; }
+.abertura.sai .ab-porta.e { animation: porta-e .95s cubic-bezier(.7, 0, .25, 1) .08s forwards; }
+.abertura.sai .ab-porta.d { animation: porta-d .95s cubic-bezier(.7, 0, .25, 1) .08s forwards; }
+.abertura.sai .ab-porta::after { animation: sombra .95s cubic-bezier(.7, 0, .25, 1) .08s forwards; }
+@keyframes porta-e { to { transform: rotateY(104deg); } }
+@keyframes porta-d { to { transform: rotateY(-104deg); } }
+@keyframes sombra { to { opacity: .85; } }
+.ab-logo { --m: clamp(70px, 22vw, 136px); position: absolute; left: 50%; top: 46%; translate: -50% -50%; transform-origin: 0 0; }
+.ab-clique { display: flex; align-items: center; gap: calc(var(--m) * .4); color: var(--color-areia); animation: clique .34s cubic-bezier(.3, 0, .2, 1) .86s; }
+@keyframes clique { 40% { scale: 1.035; } }
+.ab-ky { height: var(--m); width: auto; flex: none; overflow: visible; }
+.ab-nome { height: calc(var(--m) * .5); width: auto; flex: none; clip-path: inset(-20% 100% -20% 0); translate: -6% 0; animation: escreve .55s cubic-bezier(.65, 0, .35, 1) .74s forwards; }
+@keyframes escreve { to { clip-path: inset(-20% 0 -20% 0); translate: 0 0; } }
+.ab-letras { transform-box: fill-box; clip-path: inset(100% 0 0 0); translate: 0 14%; animation: enche .62s cubic-bezier(.2, .7, .1, 1) .08s forwards; }
+@keyframes enche { to { clip-path: inset(0 0 0 0); translate: 0 0; } }
+.ab-haste { transform-box: fill-box; clip-path: inset(0 0 100% 0); translate: 0 -24%; animation: desce .45s cubic-bezier(.2, .7, .1, 1) .36s forwards; }
+@keyframes desce { to { clip-path: inset(0 0 0 0); translate: 0 0; } }
+.ab-palhetao { transform-box: fill-box; transform-origin: 0 50%; scale: 0 1; animation: roda .3s cubic-bezier(.2, .7, .1, 1.35) .64s forwards; }
 @keyframes roda { to { scale: 1 1; } }
-.abertura.salta .abertura-logo, .abertura.salta .abertura-logo * { animation-delay: 0s !important; animation-duration: .001s !important; }
+.abertura.salta .ab-logo *, .abertura.salta .ab-clique { animation-delay: 0s !important; animation-duration: .001s !important; }
 
 /* iOS: never show the native start-playback glyph (the slashed play of Low Power Mode). Our poster layer and play
    button sit there; the native controls only appear while frames are really playing on touch screens */
 video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none; }
 video:not([controls])::-webkit-media-controls { display: none !important; }
 video:not([controls])::-webkit-media-controls-panel { display: none !important; }
+.gancho { text-shadow: 0 2px 0 rgb(13 22 33 / .55), 0 10px 40px rgb(13 22 33 / .9); }
+.contorno { color: transparent; -webkit-text-stroke: 1.5px rgb(216 195 160 / .8); }
+.contorno-escuro { color: transparent; -webkit-text-stroke: 1.5px rgb(143 118 83 / .28); }
+
+/* Meta consent bar injected by public/pixel.js */
+.consent { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 95; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; max-width: 560px; padding: 14px 16px; border-radius: 16px; background: rgb(13 22 33 / .96); border: 1px solid rgb(255 255 255 / .12); box-shadow: 0 24px 60px -20px rgb(0 0 0 / .8); color: var(--color-soft); font-size: 13px; line-height: 1.45; backdrop-filter: blur(10px); }
+.consent[hidden] { display: none; }
+.consent__msg { flex: 1 1 260px; margin: 0; }
+.consent__btns { display: flex; gap: 8px; }
+.consent__btns button { height: 38px; padding: 0 16px; border-radius: 999px; font-weight: 700; font-size: 13px; cursor: pointer; }
+.consent__no { background: transparent; color: var(--color-soft); border: 1px solid rgb(255 255 255 / .2); }
+.consent__yes { background: var(--color-marfim); color: var(--color-ink); border: 0; }
+@media (min-width: 640px) { .consent { left: 20px; right: auto; bottom: 20px; } }
+html.abre .consent { display: none; }
+.consent { animation: consent-sobe .5s cubic-bezier(.2, .7, .1, 1) .4s both; }
+@keyframes consent-sobe { from { opacity: 0; translate: 0 16px; } }

@@ -83,13 +83,13 @@ export function DuasLinhas({ l }: { l: Linhas }) {
     <>
       <span className="block">{l[0]}</span>
       <span className="block">
-        <span className="texto-grad pb-[0.08em] [-webkit-box-decoration-break:clone] [box-decoration-break:clone]">{l[1]}</span>
+        <span className="l2 text-areia">{l[1]}</span>
       </span>
     </>
   );
 }
 
-export const tituloH2 = "text-balance text-[1.6rem] font-[650] leading-[1.08] tracking-[-0.035em] text-white sm:text-4xl lg:text-[2.75rem]";
+export const tituloH2 = "text-balance text-[1.85rem] font-extrabold uppercase leading-[1.04] tracking-[-0.01em] text-white sm:text-5xl lg:text-[3.3rem]";
 
 /** Centred h2 + sub (Doxter Titulo). */
 export function Titulo({ id, titulo, texto, className = "" }: { id: string; titulo: Linhas; texto?: string; className?: string }) {
@@ -170,7 +170,7 @@ export function Celula({ className = "", titulo, texto, nota, atraso = 0, childr
       <Cartao className="flex h-full flex-col overflow-hidden">
         <div className={`relative ${alto}`}>{children}</div>
         <div className="px-6 pb-7 pt-3 sm:px-8 sm:pb-8">
-          <h3 className="text-lg font-semibold tracking-[-0.015em] text-white">{titulo}</h3>
+          <h3 className="text-xl font-extrabold uppercase tracking-[-0.01em] text-white sm:text-2xl">{titulo}</h3>
           <p className="mt-2 max-w-md text-pretty text-[15px] leading-relaxed text-mute">{texto}</p>
           {nota && <p className="mt-3 text-xs text-mute/80">{nota}</p>}
         </div>

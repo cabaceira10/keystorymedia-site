@@ -31,10 +31,14 @@ function Video() {
         className="h-full w-full object-cover"
       />
       {!anda && (
-        <button type="button" onClick={toca} aria-label="Ver o vídeo" className="group absolute inset-0 grid place-items-center">
-          <span className="grid h-20 w-20 place-items-center rounded-full bg-areia text-ink shadow-[0_0_0_10px_rgba(216,195,160,.25),0_20px_50px_-10px_rgba(0,0,0,.7)] transition group-hover:scale-105 sm:h-24 sm:w-24">
-            <Play className="ml-1 h-8 w-8 sm:h-10 sm:w-10" />
+        <button type="button" onClick={toca} aria-label="Ver o vídeo de 91 segundos com som" className="group absolute inset-0 overflow-hidden">
+          <span aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(13,22,33,.35),rgba(13,22,33,.78))]" />
+          <span aria-hidden="true" className="absolute inset-x-0 top-[13%] text-center text-[11px] font-bold uppercase tracking-[0.14em] text-white/85 sm:text-sm">Uma casa na Foz do Arelho em</span>
+          <span aria-hidden="true" className="gancho absolute inset-x-0 top-1/2 -translate-y-1/2 text-center text-[2.3rem] font-black uppercase leading-none tracking-[-0.03em] text-areia sm:text-[6.2rem]">91 segundos</span>
+          <span className="absolute left-1/2 top-1/2 grid h-14 w-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-marfim text-ink shadow-[0_0_0_8px_rgba(244,239,232,.22),0_18px_40px_-8px_rgba(0,0,0,.8)] transition duration-300 group-hover:scale-110 sm:h-20 sm:w-20">
+            <Play className="ml-1 h-7 w-7 sm:h-9 sm:w-9" />
           </span>
+          <span aria-hidden="true" className="absolute bottom-[9%] left-1/2 -translate-x-1/2 whitespace-nowrap rounded-[4px] bg-areia px-2.5 py-1 text-[11px] font-bold text-ink sm:text-[13px]">Carrega e ouve com som</span>
         </button>
       )}
     </div>
@@ -59,16 +63,16 @@ export default function Heroi() {
       </div>
 
       <div className="relative mx-auto flex max-w-4xl flex-col items-center px-5 text-center sm:px-8">
-        <motion.p {...entra(0.05)} className="rounded-md bg-white/[.08] px-3 py-1.5 text-[9.5px] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.16em] text-areia ring-1 ring-white/10 sm:text-xs">
-          Caldas da Rainha · Leiria · Nazaré · Óbidos
+        <motion.p {...entra(0.05)} className="rounded-[3px] bg-marfim px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.06em] text-ink sm:text-[11px]">
+          Para agentes imobiliários<span className="hidden sm:inline"> | Caldas da Rainha · Leiria · Nazaré · Óbidos</span>
         </motion.p>
 
-        <motion.h1 {...entra(0.12)} id="t-topo" className="mt-6 text-balance text-[1.95rem] font-extrabold uppercase leading-[1.08] tracking-[-0.01em] text-white sm:text-5xl lg:text-[3.4rem]">
-          Os teus imóveis param o scroll?
+        <motion.h1 {...entra(0.12)} id="t-topo" className="mt-6 max-w-[22ch] text-balance text-[1.85rem] font-extrabold uppercase leading-[1.08] tracking-[-0.01em] text-white sm:text-5xl lg:text-[3.4rem]">
+          Estás a perder angariações para quem filma melhor?
         </motion.h1>
 
         <motion.p {...entra(0.3)} className="mt-5 max-w-2xl text-pretty text-lg leading-snug text-white/85 sm:text-2xl">
-          Vídeo, fotografia e drone para agentes imobiliários. Tudo num só dia de filmagem.
+          Vídeo, fotografia e drone que vendem os teus imóveis mais depressa. Num só dia de filmagem.
         </motion.p>
 
         <motion.div {...entra(0.45)} className="relative mt-8 w-full max-w-3xl">
@@ -77,7 +81,7 @@ export default function Heroi() {
         </motion.div>
 
         <motion.p {...entra(0.6)} className="mt-7 max-w-xl text-pretty text-[15px] leading-relaxed text-ink/80 sm:text-base">
-          Filmamos o imóvel, tratamos da edição e entregamos <strong className="font-bold text-ink">fotografias em 48 horas e vídeos em 5 dias úteis</strong>, prontos a publicar no Instagram e nos portais.
+          Num só dia filmamos o imóvel. Recebes <strong className="font-bold text-ink">fotografias em 48 horas e vídeo em 5 dias úteis</strong>, feitos pela equipa que já filmou para a Dream Maker Imobiliária, o Tomás Marques e o Aurélio Marques.
         </motion.p>
 
         <motion.div {...entra(0.7)} className="mb-12 mt-6 w-full sm:mb-16 sm:w-auto">
@@ -86,10 +90,10 @@ export default function Heroi() {
             target="_blank"
             rel="noopener"
             data-cta="hero"
-            className="inline-flex h-14 w-full items-center justify-center gap-2.5 rounded-full bg-ink px-6 text-[13px] font-bold sm:px-9 sm:text-[15px] uppercase tracking-[0.06em] text-marfim shadow-[0_14px_40px_-12px_rgba(20,32,47,.7)] transition hover:bg-deep sm:w-auto"
+            className="inline-flex h-14 w-full items-center justify-center gap-2.5 rounded-full bg-ink px-5 text-[12.5px] font-bold uppercase tracking-[0.02em] sm:px-9 sm:text-[15px] sm:tracking-[0.06em] text-marfim shadow-[0_14px_40px_-12px_rgba(20,32,47,.7)] transition hover:bg-deep sm:w-auto"
           >
             <WhatsApp className="h-5 w-5 text-wa" />
-            Quero filmar o meu imóvel
+            Quero isto para os meus imóveis
           </a>
         </motion.div>
       </div>

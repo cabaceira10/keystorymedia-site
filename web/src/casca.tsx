@@ -127,10 +127,10 @@ function Contacto() {
               target="_blank"
               rel="noopener"
               data-cta="contacto"
-              className="inline-flex h-14 items-center justify-center gap-2.5 rounded-xl bg-wa px-8 text-base font-semibold text-[#06210f] shadow-[0_10px_40px_-10px_rgba(37,211,102,.6)] transition hover:brightness-110"
+              className="inline-flex h-14 items-center justify-center gap-2.5 rounded-full bg-wa px-6 text-[13px] font-extrabold uppercase sm:px-8 sm:text-[15px] tracking-[0.02em] text-[#06210f] shadow-[0_10px_40px_-10px_rgba(37,211,102,.6)] transition hover:brightness-110"
             >
               <WhatsApp className="h-5 w-5" />
-              {FALAR}
+              Quero marcar a minha filmagem
             </a>
             <a href={INSTAGRAM} target="_blank" rel="noopener" aria-label="Instagram @keystorymedia" className="inline-flex h-14 items-center justify-center gap-2.5 rounded-xl border border-white/15 bg-white/[.03] px-6 text-base font-medium text-white backdrop-blur transition hover:border-white/30 hover:bg-white/[.07]">
               <Instagram className="h-5 w-5" />

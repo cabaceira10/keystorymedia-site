@@ -21,7 +21,7 @@ const VEU = <div aria-hidden="true" className="pointer-events-none absolute inse
 export default function Servicos() {
   return (
     <section id="servicos" aria-labelledby="t-servicos" className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24">
-      <TituloBloco id="t-servicos" titulo={["O que fazemos.", "Num só dia de filmagem."]} texto="Tudo o que a casa precisa para chegar ao mercado com nível premium, e conteúdo de autoridade para o agente, todos os meses." />
+      <TituloBloco id="t-servicos" titulo={["Tudo o que a casa precisa.", "Num só dia."]} texto="Tudo o que a casa precisa para chegar ao mercado com nível premium, e conteúdo de autoridade para o agente, todos os meses." />
       <div className="mt-12 grid gap-4 sm:gap-5 lg:grid-cols-6">
         <Celula className="group/c lg:col-span-4" alto="h-64 sm:h-80" titulo="Imóveis" texto="Reel vertical cinematográfico para Instagram, Facebook e TikTok, e fotografia de interiores e exteriores, editada para os portais.">
           <Foto src="img/imovel-foz-do-arelho.webp" alt="Interior da casa T3 na Foz do Arelho, filmada pela Keystory" />
@@ -46,12 +46,13 @@ export default function Servicos() {
       </div>
       <div className="mt-5 grid gap-4 sm:gap-5 lg:grid-cols-2">
         <div className="rounded-3xl border border-white/[.08] bg-gradient-to-b from-deep/80 to-ink/80 p-6 sm:p-8">
-          <h3 className="text-lg font-semibold tracking-[-0.015em] text-white">Pack completo</h3>
+          <h3 className="text-xl font-extrabold uppercase tracking-[-0.01em] text-white sm:text-2xl">Pack completo</h3>
           <p className="mt-2 text-pretty text-[15px] leading-relaxed text-mute">A tua marca e os teus imóveis num só plano mensal: marca pessoal Studio ou Cinematic, 2 imóveis por mês com vídeo, fotografia e drone, e imóveis extra com condições de cliente.</p>
         </div>
-        <div className="rounded-3xl border border-areia/25 bg-gradient-to-b from-areia/[.08] to-transparent p-6 sm:p-8">
-          <h3 className="text-lg font-semibold tracking-[-0.015em] text-areia">Condições de fundador</h3>
-          <p className="mt-2 text-pretty text-[15px] leading-relaxed text-white/80">Os primeiros clientes de marca pessoal garantem condições especiais enquanto o plano estiver ativo. Lugares limitados.</p>
+        <div className="relative overflow-hidden rounded-3xl bg-areia p-6 text-ink sm:p-8">
+          <span className="inline-block rounded-[3px] bg-ink px-2 py-1 text-[10px] font-extrabold uppercase tracking-[0.12em] text-areia">Lugares limitados</span>
+          <h3 className="mt-3 text-xl font-extrabold uppercase tracking-[-0.01em] sm:text-2xl">Condições de fundador</h3>
+          <p className="mt-2 text-pretty text-[15px] leading-relaxed text-ink/80">Os primeiros clientes de marca pessoal garantem condições especiais enquanto o plano estiver ativo. Lugares limitados.</p>
         </div>
       </div>
     </section>
